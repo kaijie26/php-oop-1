@@ -36,8 +36,8 @@
     }
 
     $terminator = new Movie('Terminator', 'Action', 'Unrestricted');
-    $terminator->likes = '8888';
-    var_dump($terminator->getAccessibility())
+    $terminator->likes = 8888;
+    $terminator->setAccessibility();
 
 ?>
 
