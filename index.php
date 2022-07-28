@@ -35,9 +35,17 @@
 
     }
 
+    $myMovies = [];
+
     $terminator = new Movie('Terminator', 'Action', 'Unrestricted');
     $terminator->likes = 8888;
     $terminator->setAccessibility();
+    $myMovies[] = $terminator ;
+
+    $armagedon = new Movie('Armagedon', 'Fantasy', 'Restricted');
+    $armagedon->likes = 9999;
+    $armagedon->setAccessibility();
+    $myMovies[] = $armagedon ;
 
 ?>
 
@@ -50,9 +58,20 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>I miei film</h1>
 
-    <h1> <?php echo $terminator->title?> </h1>
-    <div> <?php echo $terminator->getAccessibility() ?> </div>
+    <?php foreach($myMovies as $movie) { ?>
+
+        <div>
+            <h2> <?php echo $movie->title; ?> </h2>
+            <div> Genere: <?php echo $movie->genre; ?> </div>
+            <div> Likes: <?php echo $movie->likes; ?> </div>
+            <div> Visione: <?php echo $movie->vision; ?> </div>
+            <div> Accessibilità: <?php echo $movie->getAccessibility(); ?> </div>
+
+        </div>
+
+    <?php }?>
     
 </body>
 </html>
